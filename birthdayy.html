@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Love! 🎂💕</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            color: #ffffff;
+            padding: 20px;
+            position: relative;
+        }
+        h1 {
+            font-size: 4em;
+            margin-top: 20px;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+        }
+        .button {
+            background: #ff69b4;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background: #ff1493;
+        }
+        .hidden {
+            display: none;
+        }
+        .frame {
+            border: 5px solid white;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #ff1493;
+            font-size: 1.3em;
+            margin: 20px auto;
+            width: 60%;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .stickers {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+        .sticker1 {
+            top: 10px;
+            left: 10px;
+        }
+        .sticker2 {
+            top: 10px;
+            right: 10px;
+        }
+        .sticker3 {
+            bottom: 10px;
+            left: 10px;
+        }
+        .sticker4 {
+            bottom: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 Happy Birthday, Love of My Life! 🎂💕</h1>
+    <button class="button" onclick="showLoveQuestion()">Next</button>
+    
+    <img src="confetti.png" class="stickers sticker1">
+    <img src="boy.png" class="stickers sticker2">
+    <img src="birthday-cupcake.png" class="stickers sticker3">
+    <img src="capybara.png" class="stickers sticker4">
+
+    <div id="loveQuestion" class="hidden">
+        <h2>Do you love me? 💖</h2>
+        <button class="button" onclick="checkLove(true)">Yes</button>
+        <button class="button" onclick="checkLove(false)">No</button>
+    </div>
+    
+    <div id="questionnaire" class="hidden">
+        <h2>Answer these questions to unlock your surprise! 🎁</h2>
+        <p>You must correct all answers to see a hidden message!</p>
+        <form id="quizForm">
+            <label>1. When is my birthday?</label><br>
+            <input type="radio" name="q1" value="wrong"> 24-04-2005 <br>
+            <input type="radio" name="q1" value="correct"> 25-04-2005<br>
+              <input type="radio" name="q1" value="wrong"> 25-05-2005<br><br>
+            
+            <label>2. When is our anniversary?</label><br>
+            <input type="radio" name="q2" value="correct"> 05-12-2023<br>
+            <input type="radio" name="q2" value="wrong"> 07-12-2024<br>
+            <input type="radio" name="q2" value="wrong"> 07-12-2023<br><br>
+            
+            <label>3. Whats the first thing I noticed about you?</label><br>
+            <input type="radio" name="q3" value="wrong"> specs<br>
+            <input type="radio" name="q3" value="correct"> rings<br>
+            <input type="radio" name="q3" value="wrong"> hair<br><br>
+            
+            <label>4. What do I do when I'm angry with you?</label><br>
+            <input type="radio" name="q4" value="wrong"> blocks u<br>
+            <input type="radio" name="q4" value="wrong"> cry<br>
+            <input type="radio" name="q4" value="correct"> tell u that i hate you<br><br>
+            
+            
+            <button type="button" class="button" onclick="checkAnswers()">Submit</button>
+        </form>
+    </div>
+    
+    <div id="loveLetter" class="hidden frame">
+        <h2>💌 My Love Letter to You 💌</h2>
+        <p>My dearest love,</p>
+        <p>  Happy Birthday, my love! On this special day, I just want to remind you how much you mean to me. You are the best thing that ever happened to me, and every small thing about you makes me love you more. I feel so lucky to have you in my life. You are my favorite person, my safe place, and the one I always want to be with.
+            
+            I believe in you. No matter what happens, I know you will do great things, and I will always be by your side, supporting you. I trust you, and I know that whatever challenges come, we will face them together.
+            
+            I’m also sorry if sometimes I say things I don’t mean. I never want to hurt you, and I feel bad when I do. Please know that my love for you is always bigger than any small mistakes I make.
+            
+            Thank you for loving me, for being patient with me, and for making my life more beautiful. I love you more than words can say, and I always will.
+            
+            Happy Birthday once again, my love! I hope this year brings you all the happiness and success you deserve.
+            
+
+
+            (Now, please cry after reading this. Happy tears only!)
+            
+
+
+            Oh, and there’s a little something waiting for you when we meet next time. Hope you’re excited!
+            
+            Yours,
+            Leyy 🎂💕</p>
+    </div>
+    
+    <script>
+        function showLoveQuestion() {
+            document.getElementsByTagName("h1")[0].style.display = "none";
+            document.getElementsByTagName("button")[0].style.display = "none";
+            document.getElementById("loveQuestion").classList.remove("hidden");
+        }
+        
+        function checkLove(answer) {
+            if (answer) {
+                document.getElementById("loveQuestion").classList.add("hidden");
+                document.getElementById("questionnaire").classList.remove("hidden");
+            } else {
+                alert("Oops! Try again, my love.");
+            }
+        }
+        
+        function checkAnswers() {
+            let correctAnswers = document.querySelectorAll("input[value='correct']:checked").length;
+            let totalQuestions = document.querySelectorAll("input[value='correct']").length;
+            
+            if (correctAnswers === totalQuestions) {
+                document.getElementById("questionnaire").classList.add("hidden");
+                document.getElementById("loveLetter").classList.remove("hidden");
+            } else {
+                alert(`You scored ${correctAnswers}/${totalQuestions}. Try again!`);
+            }
+        }
+    </script>
+</body>
+</html>
