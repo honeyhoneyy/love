@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -47,35 +47,37 @@
         }
         .stickers {
             position: absolute;
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
         }
-        .sticker1 {
-            top: 10px;
-            left: 10px;
-        }
-        .sticker2 {
-            top: 10px;
-            right: 10px;
-        }
-        .sticker3 {
-            bottom: 10px;
-            left: 10px;
-        }
-        .sticker4 {
-            bottom: 10px;
-            right: 10px;
-        }
+        .sticker1 { top: -40px; left: -40px; } /* Top-left corner */
+.sticker2 { top: -40px; right: -40px; } /* Top-right corner */
+.sticker3 { bottom: -40px; left: -40px; } /* Bottom-left corner */
+.sticker4 { bottom: -40px; right: -40px; } /* Bottom-right corner */
+.sticker5 { top: -50px; left: 50%; transform: translateX(-50%); } /* Center-top */
+.sticker6 { bottom: -50px; left: 50%; transform: translateX(-50%); } /* Center-bottom */
+.sticker7 { top: 50%; left: -40px; transform: translateY(-50%); } /* Middle-left */
+.sticker8 { top: 50%; right: -40px; transform: translateY(-50%); } /* Middle-right */
+.sticker9 { top: -30px; left: 25%; } /* Top-left diagonal */
+.sticker10 { bottom: -30px; right: 25%; } /* Bottom-right diagonal */
+
     </style>
 </head>
 <body>
     <h1>🎉 Happy Birthday, Love of My Life! 🎂💕</h1>
     <button class="button" onclick="showLoveQuestion()">Next</button>
     
-    <img src="confetti.png" class="stickers sticker1">
-    <img src="boy.png" class="stickers sticker2">
-    <img src="birthday-cupcake.png" class="stickers sticker3">
-    <img src="capybara.png" class="stickers sticker4">
+    <img src="https://cdn-icons-png.flaticon.com/256/5784/5784082.png" class="stickers sticker1">
+    <img src="https://cdn-icons-png.flaticon.com/256/6518/6518992.png" class="stickers sticker2">
+    <img src="https://cdn-icons-png.flaticon.com/256/6143/6143109.png" class="stickers sticker3">
+    <img src="https://cdn-icons-png.flaticon.com/256/5784/5784099.png" class="stickers sticker4">
+    <img src="https://cdn-icons-png.flaticon.com/256/6917/6917446.png" class="stickers sticker5">
+    <img src="https://cdn-icons-png.flaticon.com/256/4383/4383980.png" class="stickers sticker6">
+    <img src="https://cdn-icons-png.flaticon.com/256/4743/4743113.png" class="stickers sticker7">
+    <img src="https://cdn-icons-png.flaticon.com/256/5784/5784075.png" class="stickers sticker8">
+    <img src="https://cdn-icons-png.flaticon.com/256/5784/5784133.png" class="stickers sticker9">
+    <img src="https://cdn-icons-png.flaticon.com/256/6142/6142860.png" class="stickers sticker10">
+
 
     <div id="loveQuestion" class="hidden">
         <h2>Do you love me? 💖</h2>
@@ -98,8 +100,8 @@
             <input type="radio" name="q2" value="wrong"> 07-12-2023<br><br>
             
             <label>3. Whats the first thing I noticed about you?</label><br>
-            <input type="radio" name="q3" value="wrong"> specs<br>
-            <input type="radio" name="q3" value="correct"> rings<br>
+            <input type="radio" name="q3" value="correct"> specs<br>
+            <input type="radio" name="q3" value="wrong"> rings<br>
             <input type="radio" name="q3" value="wrong"> hair<br><br>
             
             <label>4. What do I do when I'm angry with you?</label><br>
